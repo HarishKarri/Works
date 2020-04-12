@@ -1,0 +1,27 @@
+Dynamic programming is a method for solving a complex problem by breaking it
+down into a collection of simpler subproblems,solving each of those
+subproblems just once, and storing their solutions.
+
+
+An algorithm is designed to achieve optimum solution for a given problem. 
+In greedy algorithm approach, decisions are made from the given solution domain. As being greedy, the closest solution that seems to provide an optimum solution is chosen.
+Greedy algorithms try to find a localized optimum solution, 
+which may eventually lead to globally optimized solutions. 
+However, generally greedy algorithms do not provide globally optimized solutions.
+
+
+Array is a container which stores the fixed size of elements and of same type.
+
+Linkedlist is sequence of nodes which are connected with links.
+
+Stack is a derived data structure which follows LIFO operation. ITems can be inserted using push() and removed by using pop().. same as like stack of plates.
+
+Queue is a derived data structure same like stack which follows FIFO operation and has two ways open to insert and to remove from other end. Same like driving the car in a single way.
+
+Graph is pictorial representation of set of vertices (A,B,C) whcih are connected by edges (AB,AC,BC)
+
+Graph can be traverses through Depth first seach and Breadth first search Algorithms.
+
+Tree represents the nodes connected by edges which has special condition where the parent node wil have two child nodes. 
+
+ 

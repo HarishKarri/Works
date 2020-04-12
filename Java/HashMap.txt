@@ -1,0 +1,59 @@
+import java.util.*;  
+public class HelloWorld{
+    Map<String,String> map=new HashMap<String,String>();
+    int count =0;
+    public int set(String key,String value){
+        map.put(key,value);
+        count = count + 1;
+        return count;
+    }
+    public void getAll(String key,int version){
+
+        for(Map.Entry m : map.entrySet()){
+            System.out.println(m.getKey() + " = " + m.getValue());
+        }    
+    }
+    public static void main(String []args){
+    //Creating Books   
+    HelloWorld h = new HelloWorld();
+    int h1= h.set("a","foo");
+    int h2 = h.set("b","bar");
+    int h3 = h.set("a","baz");
+    h.getAll("a",3);
+    h.getAll("a",2);
+    //Traversing map  
+    // for(Map.Entry<Integer, Book> entry:map.entrySet()){    
+    //     int key=entry.getKey();  
+    //     Book b=entry.getValue();  
+    //     System.out.println(key+" Details:");  
+    //     System.out.println(b.id+" "+b.name+" "+b.author+" "+b.publisher+" "+b.quantity);   
+    }    
+}    
+
+
+
+
+class Solution {
+    public int singleNumber(int[] nums) {
+        HashSet<Integer> h = new HashSet<Integer>();
+        for(int i=0;i<nums.length;i++){
+            if(h.contains(nums[i])){
+                h.remove(nums[i]);
+                
+                
+                
+            }
+            
+            else
+                h.add(nums[i]);            
+        }
+        int x=0;
+        for(int y: h)
+            x = y;
+        return x;        
+    }
+}
+
+
+
+The basic idea is if you have sort a map using keys then create a TreepMap from your Map which will sort the map by keys.

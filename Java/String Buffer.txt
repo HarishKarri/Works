@@ -1,0 +1,20 @@
+import java.util.Scanner;
+import java.io.*;
+import java.lang.String;
+class Main{
+    public static void main(String args[]){
+        System.out.println("Enter val");
+        Scanner in = new Scanner(System.in);
+        StringBuffer s = new StringBuffer();
+        s.append(in.nextLine());
+        System.out.println("Entered " + s);
+        s.insert(2,"hahaha");
+        System.out.println("Entered after " + s);
+        System.out.println("reversed " + s.reverse());
+        System.out.println("char " + s.charAt(3));
+        System.out.println("Deleted " + s.delete(4,5));
+        // System.out.println("Deleted " + s.delete(1));
+    }
+}
+
+s.setLength(0);

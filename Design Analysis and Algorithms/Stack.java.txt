@@ -1,0 +1,65 @@
+// stack has push and pop method, top;
+class Main{
+    private static int size = 8;
+    int top=-1,data;
+    int arr[] = new int[8]; 
+    public boolean IsEmpty(){
+      if(top == -1){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    
+    public boolean IsFull(){
+      if(top>=size)
+        return true;
+      else
+        return false;
+    }
+    public int peek(){
+
+      return arr[top];
+    }
+    
+    public void push(int ele){
+      if(!IsFull()){
+        top = top + 1;
+        arr[top] = ele;
+      }
+      else
+        System.out.println("Stack is full");
+    }
+
+    public int pop(){
+      if(!IsEmpty()){
+          data = arr[top];
+          top = top - 1;
+          return data;
+      }
+      else{
+        System.out.println("Stack is empty");
+      }
+      return 0;
+    }
+  public static void main(String[] args){
+   Main a = new Main(); 
+   
+   a.push(3);
+   a.push(5);
+   a.push(9);
+   a.push(1);
+   a.push(12);
+   a.push(15);
+   System.out.println("Element at top of the stack: "+ a.peek());
+   while(!a.IsEmpty()) {
+      int dataa = a.pop();
+      System.out.println(dataa);
+   }
+   System.out.println("Stack full: " + a.IsFull());
+   System.out.println("Stack empty: " + a.IsEmpty());
+    }
+
+
+}

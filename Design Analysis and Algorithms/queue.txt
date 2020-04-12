@@ -1,0 +1,89 @@
+
+// stack has push and pop method, top;
+class Main{
+    private static int size = 6;
+    int front=0,rear=-1;
+    int arr[] = new int[6]; 
+    public void enqueue(int ele){
+      if(!IsFull()){
+        rear = rear+ 1;
+        arr[rear] = ele;
+      }
+      else{
+
+        System.out.println("Queue is Full");
+      }
+
+    }
+   public boolean IsFull(){
+     if( rear == size){
+       return true;
+     }
+    else{
+      return false;
+    }
+   }
+   public int sizee(){
+     
+
+   }
+   public boolean IsEmpty(){
+     if( rear == -1){
+       return true;
+     }
+    else{
+      return false;
+    }
+   }
+
+    public int dequeue(){
+       if(!IsEmpty()){
+          front =front + 1;
+          return arr[front];
+    }
+    else
+      {
+        System.out.println("Queue is Empty");
+      }
+      return 0;
+
+    }
+    public int peek(){
+      return arr[front];
+    }
+  public static void main(String[] args){
+   Main a = new Main(); 
+   System.out.println("HK is full!\n");   
+   a.enqueue(3);
+   a.enqueue(5);
+   a.enqueue(9);
+   a.enqueue(1);
+   a.enqueue(12);
+   a.enqueue(15);
+  
+   if(a.IsFull()) {
+       System.out.println("Queue is full!\n");   
+   }
+
+   // remove one item 
+   int num = a.dequeue();
+	
+    System.out.println("Element removed:"+ num);
+   a.enqueue(16);
+   a.enqueue(17);
+   a.enqueue(18);
+   System.out.println("Element at front: %d\n"+a.peek());
+
+   System.out.println("----------------------\n");
+   System.out.println("index : 5 4 3 2  1  0\n");
+   System.out.println("----------------------\n");
+   System.out.println("Queue:  ");
+	
+   while(!a.IsEmpty()) {
+      int n = a.dequeue();           
+      System.out.println(n);
+   }   
+    }
+
+
+}

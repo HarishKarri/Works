@@ -1,0 +1,56 @@
+//recursive
+
+ 
+import java.util.*; (utility class which contains everything related to class,date,random nmber generator etc.)
+import java.io.*;
+class Main{
+    public static int recure(int val){
+        //System.out.println(val);
+        if(val == 1 || val ==2){
+            return 1;
+        }
+        else
+            return (recure(val-1) + recure(val-2));
+    }
+    
+    public static void main(String args[]){
+        
+        System.out.println("Enter val");
+        Scanner in = new Scanner(System.in);
+        int val = in.nextInt();
+        for(int i=1;i<=val;i++){
+            int dat = recure(i);
+            System.out.print(dat+" ");    
+        }
+        
+    }
+}
+
+
+
+//iterative
+
+import java.util.*;
+import java.io.*;
+class Main{
+    public static void main(String args[]){
+        
+        System.out.println("Enter val");
+        Scanner in = new Scanner(System.in);
+        int val = in.nextInt();
+        int arr[] = new int[val];
+        for(int i=0;i<val;i++){
+            if(i==0 || i==1){
+                arr[i] = 1;
+            }
+            else{
+                arr[i] = arr[i-1] + arr[i-2];
+            }
+            }
+     for(int i=0;i<val;i++){
+        System.out.print(arr[i]+" "); 
+         
+     }
+        
+    }
+}

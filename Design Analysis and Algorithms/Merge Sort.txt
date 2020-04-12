@@ -1,0 +1,39 @@
+[2,4,11,2,0,6]
+
+
+[2,4] [2,6]
+[2] [4] [2] [6]
+
+O(nlogn)
+no inplace
+stable
+
+
+merge-sort(A,p,r)
+   if(p<r)
+     q = (p + r)/2
+     merge-sort(A,p,q);
+     merge-sort(A,q+1,r)
+     //now the array are sorted in order
+     MERGE(A,p,q,r);
+     
+MERGE(A,p,q,r)
+	n1 = q-p+1;
+	n2 = r-q;
+	create Array L[1...n1+1]
+	create Array R[1...n2+1]
+	copy a[p...q] to L
+	copy a[q+1..r] to R
+	l[n1+1] = R[n2+1] = infinty
+	i = j = 1;
+	for k from p to r
+	 If l[i] <= R[j]
+	 	A[k] = l[i];
+		i ++;
+	else
+	 	A[k] = R[j]
+		j++;
+
+
+
+

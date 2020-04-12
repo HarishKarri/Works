@@ -1,0 +1,152 @@
+dynamic memory allocation and pointers are required 
+
+The C programming language provides a keyword called typedef, which you can use to give a type a new name. Following is an example to define a term BYTE for one-byte numbers -
+
+typedef unsigned char BYTE;
+
+Creating a node
+
+
+#include<stdlib.h>
+#include<stdio.h>
+typedef struct Node{
+    int data;
+    struct Node *next;
+}node;
+
+
+node* create(int n){
+    
+    int i=0;
+    node *head=NULL;
+    node *temp=NULL;
+    node *p=NULL;
+    
+    for(i=0;i<n;i++){
+        
+        // if(i=0){
+        //     head = (node *) malloc(sizeof(node));				
+            
+            
+        // }
+        temp = (node*) malloc(sizeof(node));
+        printf("Enter value of node no %d",i+1);
+        scanf("%d",&temp->data);
+        temp->next=NULL;
+        if(head==NULL){
+            head=temp;
+            
+        }
+        else{
+            
+            p=head;
+            while(p->next!=NULL){
+                p=p->next;
+            }
+            p->next=temp;
+        }
+    }
+    
+    return head;
+}
+
+void display(node* head){
+    
+    node *p =NULL;
+    if(head==NULL){
+        
+        printf("Empty Man");
+        
+    }
+    else{
+        p = head;
+        while(p->next!=NULL){
+            
+            printf("%d",p->data);
+            p=p->next;
+            
+        }
+       printf("%d",p->data);
+        
+        
+    }
+}
+
+
+node *delete(char d){
+
+node *q = head;    //previous
+node *p = head->next;  // current 
+
+// (1)if the node to delete is head 
+
+if(q->val == d){
+	head= p;
+	delete(q);
+
+}
+
+else{
+
+while(p->val != d){
+	p=p->next;
+	q=q->next;
+}
+// (2) if the node is at the end to delete
+if(p->next == NULL){
+q-> next= NULL;
+delete(p);
+}
+
+// if the node is internal one
+else{
+q->next = p->next;
+delete(p);
+}
+}
+
+}
+        
+        
+void Reverse(){
+
+Node *current, *next, *prev;
+current = head;
+prev = NULL;
+
+while(current!=NULL){
+
+ next = current -> next; 
+ current->next = prev;
+ prev = current;
+ current = next;
+ }
+head = prev;
+
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+int main(){
+    int n=0;
+    node *head =NULL;
+    printf("enter number of nodes");
+    scanf("%d",&n);
+    head= create(n);
+    display(head);
+    
+    
+return 0;
+}
+
+
+

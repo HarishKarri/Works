@@ -1,0 +1,31 @@
+// stack has push and pop method, top;
+import java.util.Scanner;
+import java.io.*;
+class Main{
+  
+public static void main(String[] args){
+ int arr[]={1,5,21,4,15,6,17,9,19};
+ int j;
+  for(int i=1;i<arr.length;i++){
+    j =i;
+    while(j>0 && arr[j] < arr[j-1]){
+      int temp = arr[j];
+      arr[j] = arr[j-1];
+      arr[j-1] = temp;
+      j= j-1;
+    }
+  }  
+   for(int i=0;i<arr.length;i++){
+
+     System.out.print(arr[i]);
+     System.out.print(" ");
+   }
+  }
+
+}
+
+
+Stable 
+in place
+O(n2) -- worst case
+Space complexithy -1

@@ -1,0 +1,84 @@
+------>    MapEntry interface enables you to work with key values of Map
+------>    EntrySet() provides the pair values in the map
+import java.util.*; 
+import java.lang.*; 
+  
+public class GFG { 
+    public static void main(String[] args) 
+    { 
+  
+        HashMap<String, Integer> hm = new HashMap<String, Integer>(); 
+  
+        // enter data into hashmap 
+        hm.put("Math", 98); 
+        hm.put("Data Structure", 85); 
+        hm.put("Database", 91); 
+        hm.put("Java", 95); 
+        hm.put("Operating System", 79); 
+        hm.put("Networking", 80); 
+        // Map<String, Integer> hm1 = sortByValue(hm); 
+        List<Map.Entry<String, Integer> > list = 
+               new LinkedList<Map.Entry<String, Integer> >(hm.entrySet()); 
+  
+        // Sort the list 
+        
+        
+        
+        Collections.sort(list, new Comparator<Map.Entry<String, Integer> >() { 
+            public int compare(Map.Entry<String, Integer> o1,  
+                               Map.Entry<String, Integer> o2) 
+            { 
+                return (o1.getValue()).compareTo(o2.getValue()); 
+            } 
+        }); 
+        System.out.println(list);
+    } 
+} 
+
+        
+
+
+//object value sort
+
+
+import java.util.*; 
+import java.lang.*; 
+  
+public class MapSort {
+    private static class Employee {
+        public String name;
+
+        public Employee(String name) {
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+           return name;
+        }
+    }
+
+    public static void main(String[] args) {
+        Map<Integer, Employee> map = new HashMap<Integer, Employee>();
+
+        map.put(1, new MapSort.Employee("x"));
+        map.put(2, new MapSort.Employee("a"));
+        map.put(3, new MapSort.Employee("f"));
+
+        List<Map.Entry<Integer, Employee>> entryList = new ArrayList<Map.Entry<Integer, Employee>>(map.entrySet());
+
+            Collections.sort(
+                    entryList, new Comparator<Map.Entry<Integer, Employee>>() {
+                @Override
+                public int compare(Map.Entry<Integer, Employee> integerEmployeeEntry,
+                                   Map.Entry<Integer, Employee> integerEmployeeEntry2) {
+                    return integerEmployeeEntry.getValue().name
+                            .compareTo(integerEmployeeEntry2.getValue().name);
+                }
+            }
+        );
+
+        System.out.println(entryList);
+    }
+}
+

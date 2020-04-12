@@ -1,0 +1,23 @@
+same like merge sort
+
+Unstable
+o(nlgn)
+inplace
+
+
+
+Quicksort(A,p,r)
+	q = partition(A,p,r)
+	QuickSort(A,p,q-1)
+	QuickSort(A,q,r)
+	
+
+Partition(A,p,r)
+	x = A[r]
+	i =-1
+	for j in 0 to r-1
+		if a[j] <= x:
+			i ++ 
+			swap (a[i],a[j])
+	exchange a[i+1] with a[r]
+	return i +1; 

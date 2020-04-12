@@ -1,0 +1,33 @@
+The heap sort balances the binary tree and checks the parent node with its child nodes.The heap sort uses the binary tree and builds the min heap or max heap tree using 
+heapify.
+
+heapify sort:
+
+
+O(n log(n))   ---- best
+o(n log(n))   ---- worst
+
+
+Max-Heapify(A,i)
+1. L = Left(i);
+2. R = Right(i);
+3. if L<=A.heap-size and A[L]>A[i]:
+	largest = L;
+   else
+	largest=i;   
+4. if R<=A.heap-size and A[R]>A[largest]:
+	largest= R;
+6. if largest != i:
+	swap(A[i] with A[largest])
+	largest =i;
+	Max-Heapify(A,largest);
+
+
+Min heap 
+
+parent node <= children nodes
+
+
+and Max heap
+
+parent node >= children nodes 

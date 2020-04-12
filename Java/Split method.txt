@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+class Solution {
+    public int lengthOfLastWord(String s) {
+        ArrayList<String> a = new ArrayList<String>();
+        System.out.println(s.length());
+        int count=0;
+        String[] j = s.split(" ");
+        for(String i:j){
+            count = i.length();
+        }
+      return count;  
+    }
+    
+}

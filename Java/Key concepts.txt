@@ -1,0 +1,23 @@
+int, char , string (6 coversions)
+
+1) int to string 
+   Integer.toString(num);
+2) int to char
+   char a = (char) num;
+
+3) string to int
+   int a = Integer.valueOf(string)	
+
+4) string to char
+   s.charAt(0)
+
+5) char to string
+     string a=Character.toString(ch)
+
+6) char to int
+	int a = Character.getNumericValue(ch);
+
+
+
+append in StringBuffer
+StringBuffer.toString();
