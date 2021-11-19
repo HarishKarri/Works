@@ -1,0 +1,62 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# Python3 Program to print BFS traversal
+# from a given source vertex. BFS(int s)
+# traverses vertices reachable from s.
+
+from collections import defaultdict
+
+
+# This class represents a directed graph
+# using adjacency list representation
+
+class Graph:
+
+    # Constructor
+
+    def __init__(self):
+
+        # default dictionary to store graph
+        self.visited = []
+        self.graph = defaultdict(list)
+
+    # function to add an edge to graph
+
+    def addEdge(self, u, v):
+        self.graph[u].append(v)
+
+    # Function to print a BFS of graph
+
+    def BFS(self, s):
+        # print self.graph
+        # self.visited = [False] * (max(self.graph) + 1)
+        # print visited
+        queue = []
+        queue.append(s)
+
+        # self.visited[s] = True
+    
+        while queue:
+            s = queue.pop(0)
+            for i in self.graph[s]:
+                if(i not in self.visited):
+                    queue.append(i)
+                    self.visited.append(i)
+        return self.visited
+
+# Driver code
+
+# Create a graph given in
+# the above diagram
+
+g = Graph()
+g.addEdge(0, 1)
+g.addEdge(0, 2)
+g.addEdge(1, 2)
+g.addEdge(2, 0)
+g.addEdge(2, 3)
+g.addEdge(3, 3)
+
+print(g.BFS(2))
+
+# This code is contributed by Neelam Yadav

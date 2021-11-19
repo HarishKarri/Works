@@ -1,0 +1,49 @@
+class stack:
+    def __init__(self):
+        self.stack = []
+        self.top = -1
+        self.maxsize = 5
+    
+    def push(self,data):
+        if(self.isFull()!= True):
+            self.top = self.top +1
+            # print(self.top)
+            self.stack.append(data)
+            # print(self.stack)
+            return "Inserted"
+        else:
+            return "stack is Full"
+    
+    def isFull(self):
+        if(len(self.stack) == self.maxsize):
+            return True
+        return False
+    
+    def isEmpty(self):
+        if(self.top == -1):
+            return True
+        return False
+    
+    def peek(self):
+        return self.stack[self.top]
+        
+    def pop(self):
+        if(self.isEmpty()!= True):
+            self.stack.pop(self.top)
+            self.top = self.top -1
+            return "deleted"
+        else:
+            return "Empty Stack"
+
+if __name__ == '__main__':
+    s = stack()
+    s.push(4)
+    
+    print(s.peek())
+    s.push(5)
+    s.push(6)
+    s.push(7)
+    s.push(8)
+    print(s.peek())
+    s.pop()
+    print(s.peek())

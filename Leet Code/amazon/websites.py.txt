@@ -1,0 +1,36 @@
+dictt = {'home':['p1','p4'], 'p1':['p2','p3'],'p2':['p4'],'p4':['p5'],'p5':['p3']}
+
+totalCount = 0
+queue = []
+result = True
+
+def bfs(source,destination,totalCount):
+    if(source not in dictt):
+        return False
+    
+    if(source == destination):
+        return True
+        
+    queue.append(source)
+    while(queue):
+        currentSource = queue.pop(0)
+        if currentSource in dictt:
+            totalCount += 1
+            for vertex in dictt[currentSource]:
+                print(vertex,destination,totalCount)
+                if(vertex == destination):
+                    if(totalCount>3):
+                        return False
+                    else:
+                        return True
+                else:
+                    queue.append(vertex)
+    return False
+
+print(bfs('p1','p5',totalCount))
+
+
+
+
+
+O(V + E)
